@@ -417,7 +417,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full max-w-sm lg:w-1/3 flex justify-center lg:justify-end">
+          <div className="w-full max-w-[16.8rem] lg:w-1/4 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-sky-600 rounded-lg blur opacity-25"></div>
               <img 
