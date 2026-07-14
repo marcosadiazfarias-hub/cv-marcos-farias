@@ -177,7 +177,7 @@ const Hero = () => {
             Olá, sou o <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-sky-500 dark:from-orange-400 dark:via-amber-500 dark:to-sky-400">Marcos Farias</span>
           </h1>
           <p className="text-xl text-slate-600 dark:text-stone-300 max-w-2xl mx-auto md:mx-0 transition-colors">
-            Desenvolvedor Backend Java Sênior & Solucionador de Problemas Complexos. 
+            Desenvolvedor Backend Java & Solucionador de Problemas Complexos. 
             Construo arquiteturas escaláveis para que você não tenha que se preocupar com os servidores caindo na sexta-feira.
           </p>
           
