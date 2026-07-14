@@ -22,7 +22,7 @@ describe('App portfolio', () => {
     const user = userEvent.setup();
     render(<App />);
 
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('button', { name: /abrir menu/i });
     await user.click(button);
 
     expect(screen.getAllByRole('link', { name: /Sobre Mim/i }).length).toBeGreaterThan(1);
@@ -50,7 +50,7 @@ describe('App portfolio', () => {
     const labels = ['Sobre Mim', 'Skills', 'Trajetória', 'Formação', 'Contato'];
 
     for (const label of labels) {
-      await user.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button', { name: /abrir menu/i }));
       const mobileLink = screen.getAllByRole('link', { name: new RegExp(label, 'i') })[1];
       await user.click(mobileLink);
     }
