@@ -98,15 +98,19 @@ const ACADEMIC = [
   }
 ];
 
-const QUOTES = [
-  {
-    text: "Qualquer tolo consegue escrever código que um computador entenda. Bons programadores escrevem código que humanos possam entender.",
-    author: "Martin Fowler"
-  },
-  {
-    text: "Falar é fácil. Me mostre o código.",
-    author: "Linus Torvalds"
-  }
+const QUOTES_DATABASE = [
+  { quote: "Qualquer tolo consegue escrever código que um computador entenda. Bons programadores escrevem código que humanos possam entender.", author: "Martin Fowler" },
+  { quote: "Falar é fácil. Me mostre o código.", author: "Linus Torvalds" },
+  { quote: "A simplicidade é o último grau de sofisticação.", author: "Leonardo da Vinci" },
+  { quote: "Código bom não é o que funciona, é o que pode ser mantido.", author: "Autor Desconhecido" },
+  { quote: "Programar sem uma arquitetura em mente é como explorar uma caverna apenas com uma lanterna: você não sabe onde vai dar.", author: "Danny Thorpe" },
+  { quote: "Medir o progresso da programação por linhas de código é como medir a construção de aviões por peso.", author: "Bill Gates" },
+  { quote: "Sempre codifique como se a pessoa que vai manter o seu código fosse um psicopata violento que sabe onde você mora.", author: "John Woods" },
+  { quote: "A única maneira de ir rápido é ir bem.", author: "Robert C. Martin (Uncle Bob)" },
+  { quote: "Existem apenas duas coisas difíceis na Ciência da Computação: invalidação de cache e dar nome às coisas.", author: "Phil Karlton" },
+  { quote: "Primeiro resolva o problema. Depois escreva o código.", author: "John Johnson" },
+  { quote: "Refatorar é mudar um sistema de modo que não altere o comportamento externo, mas melhore sua estrutura interna.", author: "Martin Fowler" },
+  { quote: "Otimização prematura é a raiz de todos os males.", author: "Donald Knuth" }
 ];
 
 const Header = () => {
@@ -129,7 +133,6 @@ const Header = () => {
             </span>
           </div>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 text-slate-600 dark:text-stone-300 font-medium">
             <a href="#sobre" className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Sobre Mim</a>
             <a href="#skills" className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Skills</a>
@@ -138,7 +141,6 @@ const Header = () => {
             <a href="#contato" className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">Contato</a>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden text-slate-600 dark:text-stone-300 hover:text-slate-900 dark:hover:text-white transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -148,7 +150,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden bg-slate-50 dark:bg-stone-900 border-b border-slate-200 dark:border-stone-800 transition-colors">
           <div className="px-4 pt-2 pb-4 space-y-1">
@@ -210,6 +211,48 @@ const Hero = () => {
 };
 
 const About = () => {
+  const [currentQuotes, setCurrentQuotes] = useState([
+    { text: "Injetando a sabedoria dos mestres...", author: "Terminal" },
+    { text: "Buscando dados no repositório...", author: "Terminal" }
+  ]);
+
+  useEffect(() => {
+    const loadQuotes = () => {
+      try {
+        const date = new Date();
+        const period = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getHours() < 12 ? 'AM' : 'PM'}`;
+        
+        const cachedPeriod = localStorage.getItem('marcosdev_quotes_period');
+        const cachedQuotes = localStorage.getItem('marcosdev_quotes_data');
+
+        if (cachedPeriod === period && cachedQuotes) {
+          setCurrentQuotes(JSON.parse(cachedQuotes));
+          return;
+        }
+
+        const randomIndex1 = Math.floor(Math.random() * QUOTES_DATABASE.length);
+        let randomIndex2 = Math.floor(Math.random() * QUOTES_DATABASE.length);
+        while (randomIndex1 === randomIndex2) {
+          randomIndex2 = Math.floor(Math.random() * QUOTES_DATABASE.length);
+        }
+
+        const selectedQuotes = [
+          { text: QUOTES_DATABASE[randomIndex1].quote, author: QUOTES_DATABASE[randomIndex1].author },
+          { text: QUOTES_DATABASE[randomIndex2].quote, author: QUOTES_DATABASE[randomIndex2].author }
+        ];
+
+        localStorage.setItem('marcosdev_quotes_period', period);
+        localStorage.setItem('marcosdev_quotes_data', JSON.stringify(selectedQuotes));
+        
+        setCurrentQuotes(selectedQuotes);
+      } catch (error) {
+        console.error("Erro ao processar frases. Usando fallback.", error);
+      }
+    };
+
+    loadQuotes();
+  }, []);
+
   return (
     <section id="sobre" className="py-20 bg-slate-100/50 dark:bg-stone-900/50 border-y border-slate-200 dark:border-stone-800/80 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4">
@@ -244,7 +287,7 @@ const About = () => {
           </div>
           
           <div className="space-y-8">
-            {QUOTES.map((quote, idx) => (
+            {currentQuotes.map((quote, idx) => (
               <div key={idx} className="relative bg-white dark:bg-stone-900 p-8 rounded-2xl border border-slate-200 dark:border-stone-800 shadow-xl transition-colors">
                 <Quote className="absolute top-4 right-4 w-12 h-12 text-slate-200 dark:text-stone-800 opacity-50 transition-colors" />
                 <p className="text-lg italic text-slate-700 dark:text-stone-300 relative z-10 transition-colors">"{quote.text}"</p>
@@ -442,7 +485,7 @@ const Footer = () => {
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
 
-  // Substitua 'G-XXXXXXXXXX' pelo seu ID de Métrica do Google Analytics
+  // ID de Métrica do Google Analytics
   const GA_TRACKING_ID = 'G-YXPNLHP9PF'; 
 
   const initializeAnalytics = () => {

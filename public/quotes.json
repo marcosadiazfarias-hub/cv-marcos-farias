@@ -1,0 +1,64 @@
+{
+    "quotes": [
+        {
+            "quote": "Qualquer tolo consegue escrever código que um computador entenda. Bons programadores escrevem código que humanos possam entender.",
+            "author": "Martin Fowler"
+        },
+        {
+            "quote": "Falar é fácil. Me mostre o código.",
+            "author": "Linus Torvalds"
+        },
+        {
+            "quote": "A simplicidade é o último grau de sofisticação.",
+            "author": "Leonardo da Vinci"
+        },
+        {
+            "quote": "Código bom não é o que funciona, é o que pode ser mantido.",
+            "author": "Autor Desconhecido"
+        },
+        {
+            "quote": "Programar sem uma arquitetura em mente é como explorar uma caverna apenas com uma lanterna: você não sabe onde vai dar.",
+            "author": "Danny Thorpe"
+        },
+        {
+            "quote": "Medir o progresso da programação por linhas de código é como medir a construção de aviões por peso.",
+            "author": "Bill Gates"
+        },
+        {
+            "quote": "Sempre codifique como se a pessoa que vai manter o seu código fosse um psicopata violento que sabe onde você mora.",
+            "author": "John Woods"
+        },
+        {
+            "quote": "A única maneira de ir rápido é ir bem.",
+            "author": "Robert C. Martin (Uncle Bob)"
+        },
+        {
+            "quote": "Existem apenas duas coisas difíceis na Ciência da Computação: invalidação de cache e dar nome às coisas.",
+            "author": "Phil Karlton"
+        },
+        {
+            "quote": "Primeiro resolva o problema. Depois escreva o código.",
+            "author": "John Johnson"
+        },
+        {
+            "quote": "Refatorar é mudar um sistema de modo que não altere o comportamento externo, mas melhore sua estrutura interna.",
+            "author": "Martin Fowler"
+        },
+        {
+            "quote": "Otimização prematura é a raiz de todos os males.",
+            "author": "Donald Knuth"
+        },
+        {
+            "quote": "A depuração é duas vezes mais difícil do que escrever o código. Se você escreve o código de forma super inteligente, você não será inteligente o suficiente para depurá-lo.",
+            "author": "Brian Kernighan"
+        },
+        {
+            "quote": "O código é lido com muito mais frequência do que escrito.",
+            "author": "Guido van Rossum"
+        },
+        {
+            "quote": "A função do bom software é fazer o complexo parecer simples.",
+            "author": "Grady Booch"
+        }
+    ]
+}
