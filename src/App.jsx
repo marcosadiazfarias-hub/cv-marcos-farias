@@ -186,7 +186,7 @@ const Hero = () => {
             <a href="#contato" className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white dark:text-stone-950 font-bold rounded-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-orange-500/25">
               Bora Codar Juntos?
             </a>
-            <a href="https://github.com/TarjaBlack" target="_blank" rel="noreferrer" className="px-6 py-3 bg-white dark:bg-stone-800 hover:bg-slate-50 dark:hover:bg-stone-700 text-slate-900 dark:text-white font-medium rounded-lg transition-all flex items-center gap-2 border border-slate-200 dark:border-stone-700 shadow-sm">
+            <a href="https://github.com/marcosadiazfarias-hub" target="_blank" rel="noreferrer" className="px-6 py-3 bg-white dark:bg-stone-800 hover:bg-slate-50 dark:hover:bg-stone-700 text-slate-900 dark:text-white font-medium rounded-lg transition-all flex items-center gap-2 border border-slate-200 dark:border-stone-700 shadow-sm">
               <GithubIcon size={20} />
               Meu GitHub
             </a>
@@ -453,7 +453,7 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/in/marcosdiazfarias/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all">
                   <LinkedinIcon size={22} />
                 </a>
-                <a href="https://github.com/TarjaBlack" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#333] hover:text-white hover:border-[#333] transition-all">
+                <a href="https://github.com/marcosadiazfarias-hub" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#333] hover:text-white hover:border-[#333] transition-all">
                   <GithubIcon size={22} />
                 </a>
               </div>

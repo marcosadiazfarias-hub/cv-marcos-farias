@@ -18,11 +18,11 @@ describe('App portfolio', () => {
     expect(screen.getByRole('heading', { name: /Minha Trajetória/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Formação Acadêmica/i })).toBeInTheDocument();
 
-    expect(screen.getByRole('link', { name: /Meu GitHub/i })).toHaveAttribute('href', 'https://github.com/TarjaBlack');
+    expect(screen.getByRole('link', { name: /Meu GitHub/i })).toHaveAttribute('href', 'https://github.com/marcosadiazfarias-hub');
     expect(screen.getByRole('link', { name: /m\.diazfarias@gmail\.com/i })).toHaveAttribute('href', 'mailto:m.diazfarias@gmail.com');
     expect(screen.getByRole('link', { name: /\(48\) 98862-1897/i })).toHaveAttribute('href', 'tel:+5548988621897');
     expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/marcosdiazfarias/');
-    expect(screen.getAllByRole('link', { name: /github/i })[1]).toHaveAttribute('href', 'https://github.com/TarjaBlack');
+    expect(screen.getAllByRole('link', { name: /github/i })[1]).toHaveAttribute('href', 'https://github.com/marcosadiazfarias-hub');
   });
 
   it('should toggle the mobile menu when clicking the menu button', async () => {
