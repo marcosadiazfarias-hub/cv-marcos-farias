@@ -64,7 +64,7 @@ const ACADEMIC = [
     course: "Ciência de Dados e Machine Learning",
     institution: "Faculdade Iguaçu",
     type: "Pós-Graduação",
-    status: "Cursando"
+    status: "Concluído"
   },
   {
     course: "Business Intelligence",
