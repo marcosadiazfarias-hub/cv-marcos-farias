@@ -1,0 +1,59 @@
+{
+  "planHash": "0604935d295d563dda495624e6a9b4a3549c3ce9895eb1eea7bffb8c6ed274bb",
+  "phase": "baseline",
+  "recordedAtUtc": "2026-09-01T18:35:08.4671796Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 1922,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "tsc-no-emit",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": false,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 1,
+        "outputSample": "npm warn exec The following package was not found and will be installed: tsc@2.0.4\nnpm warn deprecated tsc@2.0.4: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.\nnpm notice run developer-marcos@0.0.0 npx\nnpm notice run \u0027tsc\u0027 --noEmit\n\n\u001B[41m                                                                               \u001B[0m\n\u001B[41m\u001B[37m                This is not the tsc command you are looking for                \u001B[0m\n\u001B[41m                                                                               \u001B[0m\n\nTo get access to the TypeScript compiler, \u001B[34mtsc\u001B[0m, from the command line either:\n\n- Use \u001B[1mnpm install typescript\u001B[0m to first add TypeScript to your project \u001B[1mbefore\u001B[0m using npx\n- Use \u001B[1myarn\u001B[0m to avoid accidentally running code from un-installed packages\n",
+        "durationMs": 1143
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": false,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 1,
+        "outputSample": "npm notice run developer-marcos@0.0.0 test\nnpm notice run vitest run --coverage\n\n\u001B[1m\u001B[30m\u001B[46m RUN \u001B[49m\u001B[39m\u001B[22m \u001B[36mv4.1.10 \u001B[39m\u001B[90m/home/marcosadf/Projetos/developer-marcos\u001B[39m\n      \u001B[2mCoverage enabled with \u001B[22m\u001B[33mv8\u001B[39m\n\n(node:42459) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.\n(Use \u0060node --trace-warnings ...\u0060 to show where the warning was created)\n \u001B[31m\u276F\u001B[39m src/App.test.jsx \u001B[2m(\u001B[22m\u001B[2m8 tests\u001B[22m\u001B[2m | \u001B[22m\u001B[31m8 failed\u001B[39m\u001B[2m)\u001B[22m\u001B[32m 12\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should render main sections and contact links\u001B[39m\u001B[32m 5\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should toggle the mobile menu when clicking the menu button\u001B[39m\u001B[32m 1\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should render quote cards and experience tags\u001B[39m\u001B[32m 1\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should execute all mobile navigation link handlers without errors\u001B[39m\u001B[32m 0\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should show the cookie banner if consent is not given\u001B[39m\u001B[32m 1\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should not show the cookie banner if consent was already given\u001B[39m\u001B[32m 0\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should hide banner and set localStorage when \u0022Sim, eu aceito\u0022 is clicked\u001B[39m\u001B[32m 0\u001B[2mms\u001B[22m\u001B[39m\n\u001B[31m     \u001B[31m\u00D7\u001B[31m should hide banner and set localStorage when \u0022Recusar\u0022 is clicked\u001B[39m\u001B[32m 0\u001B[2mms\u001B[22m\u001B[39m\n\n\u001B[31m\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u001B[39m\u001B[1m\u001B[41m Failed Tests 8 \u001B[49m\u001B[22m\u001B[31m\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u001B[39m\n\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mApp portfolio\u001B[2m \u003E \u001B[22mshould render main sections and contact links\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mApp portfolio\u001B[2m \u003E \u001B[22mshould toggle the mobile menu when clicking the menu button\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mApp portfolio\u001B[2m \u003E \u001B[22mshould render quote cards and experience tags\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mApp portfolio\u001B[2m \u003E \u001B[22mshould execute all mobile navigation link handlers without errors\n\u001B[31m\u001B[1mTypeError\u001B[22m: Cannot read properties of undefined (reading \u0027clear\u0027)\u001B[39m\n\u001B[36m \u001B[2m\u276F\u001B[22m src/App.test.jsx:\u001B[2m9:18\u001B[22m\u001B[39m\n    \u001B[90m  7|\u001B[39m \u001B[34mdescribe\u001B[39m(\u001B[32m\u0027App portfolio\u0027\u001B[39m\u001B[33m,\u001B[39m () \u001B[33m=\u003E\u001B[39m {\n    \u001B[90m  8|\u001B[39m   \u001B[34mbeforeEach\u001B[39m(() \u001B[33m=\u003E\u001B[39m {\n    \u001B[90m  9|\u001B[39m     localStorage\u001B[33m.\u001B[39m\u001B[34mclear\u001B[39m()\u001B[33m;\u001B[39m\n    \u001B[90m   |\u001B[39m                  \u001B[31m^\u001B[39m\n    \u001B[90m 10|\u001B[39m   })\u001B[33m;\u001B[39m\n    \u001B[90m 11|\u001B[39m\n\n\u001B[31m\u001B[2m\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF[1/8]\u23AF\u001B[22m\u001B[39m\n\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mCookieBanner\u001B[2m \u003E \u001B[22mshould show the cookie banner if consent is not given\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mCookieBanner\u001B[2m \u003E \u001B[22mshould not show the cookie banner if consent was already given\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mCookieBanner\u001B[2m \u003E \u001B[22mshould hide banner and set localStorage when \u0022Sim, eu aceito\u0022 is clicked\n\u001B[41m\u001B[1m FAIL \u001B[22m\u001B[49m src/App.test.jsx\u001B[2m \u003E \u001B[22mCookieBanner\u001B[2m \u003E \u001B[22mshould hide banner and set localStorage when \u0022Recusar\u0022 is clicked\n\u001B[31m\u001B[1mTypeError\u001B[22m: Cannot read properties of undefined (reading \u0027clear\u0027)\u001B[39m\n\u001B[36m \u001B[2m\u276F\u001B[22m src/App.test.jsx:\u001B[2m72:18\u001B[22m\u001B[39m\n    \u001B[90m 70|\u001B[39m \u001B[34mdescribe\u001B[39m(\u001B[32m\u0027CookieBanner\u0027\u001B[39m\u001B[33m,\u001B[39m () \u001B[33m=\u003E\u001B[39m {\n    \u001B[90m 71|\u001B[39m   \u001B[34mbeforeEach\u001B[39m(() \u001B[33m=\u003E\u001B[39m {\n    \u001B[90m 72|\u001B[39m     localStorage\u001B[33m.\u001B[39m\u001B[34mclear\u001B[39m()\u001B[33m;\u001B[39m\n    \u001B[90m   |\u001B[39m                  \u001B[31m^\u001B[39m\n    \u001B[90m 73|\u001B[39m     vi\u001B[33m.\u001B[39m\u001B[34museFakeTimers\u001B[39m()\u001B[33m;\u001B[39m\n    \u001B[90m 74|\u001B[39m   })\u001B[33m;\u001B[39m\n\n\u001B[31m\u001B[2m\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF\u23AF[2/8]\u23AF\u001B[22m\u001B[39m\n\n\n\u001B[2m Test Files \u001B[22m \u001B[1m\u001B[31m1 failed\u001B[39m\u001B[22m\u001B[90m (1)\u001B[39m\n\u001B[2m      Tests \u001B[22m \u001B[1m\u001B[31m8 failed\u001B[39m\u001B[22m\u001B[90m (8)\u001B[39m\n\u001B[2m   Start at \u001B[22m 15:35:07\n\u001B[2m   Duration \u001B[22m 833ms\u001B[2m (transform 68ms, setup 67ms, import 233ms, tests 12ms, environment 292ms)\u001B[22m\n\n",
+        "durationMs": 1338,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 8,
+          "testsPassed": 0,
+          "testsFailed": 8,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "dev-server-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\n    \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.googleapis.com\u0022\u003E\n    \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.gstatic.com\u0022 crossorigin\u003E\n    \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800\u0026display=swap\u0022 rel=\u0022stylesheet\u0022\u003E\n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n    \u003Clink rel=\u0022icon\u0022 type=\u0022image/svg\u002Bxml\u0022 href=\u0022/favicon.svg\u0022 /\u003E\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n    \u003Ctitle\u003Edeveloper-marcos\u003C/title\u003E\n  \u003C/head\u003E\n  \u003Cbody\u003E\n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/main.jsx\u0022\u003E\u003C/script\u003E\n  \u003C/body\u003E\n\u003C/html\u003E\n",
+        "durationMs": 4
+      }
+    ]
+  }
+}
