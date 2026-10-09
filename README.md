@@ -7,10 +7,12 @@
     status: "Concluído"
   }
 ];
-🚀 Como executar o projeto localmentePara rodar este projeto em sua máquina local, você precisará ter o Node.js instalado.Clone o repositório:git clone [https://github.com/TarjaBlack/developer-marcos.git](https://github.com/TarjaBlack/developer-marcos.git)
-Acesse o diretório do projeto:cd developer-marcos
-Instale as dependências:npm install 
-Inicie o servidor de desenvolvimento:npm start 
-# ou se estiver usando Vite:
+🚀 Como executar o projeto localmentePara rodar este projeto em sua máquina local, você precisará ter o Node.js instalado.Clone o repositório:
+git clone https://github.com/marcosadiazfarias-hub/cv-marcos-farias.git
+Acesse o diretório do projeto:
+cd cv-marcos-farias
+Instale as dependências:
+npm install
+Inicie o servidor de desenvolvimento:
 npm run dev
-O site estará disponível no seu navegador, geralmente no endereço http://localhost:3000 ou http://localhost:5173.Nota sobre as Imagens: Certifique-se de que as imagens de perfil e logo (1780665451143.png, 20260625_102255-IMG_STYLE.jpg e 20260625_215054-IMG_STYLE.jpg) estejam localizadas na pasta public do seu projeto React para que sejam carregadas corretamente.📬 ContatoMarcos André Díaz Farias Desenvolvedor Backend Java Sênior✉️ E-mail: m.diazfarias@gmail.com📱 Telefone: (48) 98862-1897💼 LinkedIn: linkedin.com/in/marcosdiazfarias🐙 GitHub: github.com/TarjaBlackFeito com ☕ e muito código. 2026.
+O site estará disponível no seu navegador, geralmente no endereço http://localhost:5173.Nota sobre as Imagens: Certifique-se de que as imagens de perfil e logo (1780665451143.png, 20260625_102255-IMG_STYLE.jpg e 20260625_215054-IMG_STYLE.jpg) estejam localizadas na pasta public do seu projeto React para que sejam carregadas corretamente.📬 ContatoMarcos André Díaz Farias Desenvolvedor Backend Java Sênior✉️ E-mail: m.diazfarias@gmail.com📱 Telefone: (48) 98862-1897💼 LinkedIn: linkedin.com/in/marcosdiazfarias🐙 GitHub: github.com/TarjaBlackFeito com ☕ e muito código. 2026.

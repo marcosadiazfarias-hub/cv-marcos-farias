@@ -19,6 +19,10 @@ describe('App portfolio', () => {
     expect(screen.getByRole('heading', { name: /Formação Acadêmica/i })).toBeInTheDocument();
 
     expect(screen.getByRole('link', { name: /Meu GitHub/i })).toHaveAttribute('href', 'https://github.com/marcosadiazfarias-hub');
+    expect(screen.getByRole('link', { name: /Meu Currículo/i })).toHaveAttribute(
+      'href',
+      'https://drive.google.com/file/d/1lvsVdEru8_o8HtmzMhnvfw5-8ZVH3Lbz/view?usp=sharing'
+    );
     expect(screen.getByRole('link', { name: /m\.diazfarias@gmail\.com/i })).toHaveAttribute('href', 'mailto:m.diazfarias@gmail.com');
     expect(screen.getByRole('link', { name: /\(48\) 98862-1897/i })).toHaveAttribute('href', 'tel:+5548988621897');
     expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/marcosdiazfarias/');
@@ -50,6 +54,21 @@ describe('App portfolio', () => {
     expect(screen.getByText('Azure')).toBeInTheDocument();
   });
 
+  it('should display cached quotes for the current period', () => {
+    const now = new Date();
+    const period = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}-${now.getHours() < 12 ? 'AM' : 'PM'}`;
+    localStorage.setItem('marcosdev_quotes_period', period);
+    localStorage.setItem('marcosdev_quotes_data', JSON.stringify([
+      { text: 'Frase guardada para este período.', author: 'Teste A' },
+      { text: 'Outra frase guardada.', author: 'Teste B' },
+    ]));
+
+    render(<App />);
+
+    expect(screen.getByText(/Frase guardada para este período\./)).toBeInTheDocument();
+    expect(screen.getByText(/Outra frase guardada\./)).toBeInTheDocument();
+  });
+
   it('should execute all mobile navigation link handlers without errors', async () => {
     const user = userEvent.setup();
     const { container } = render(<App />);
@@ -70,35 +89,29 @@ describe('App portfolio', () => {
 describe('CookieBanner', () => {
   beforeEach(() => {
     localStorage.clear();
-    vi.useFakeTimers();
-  });
-
-  afterEach(() => {
-    vi.useRealTimers();
   });
 
   it('should show the cookie banner if consent is not given', async () => {
     render(<App />);
     expect(screen.queryByText(/Privacidade e Cookies/i)).not.toBeInTheDocument();
 
-    vi.advanceTimersByTime(1000);
-
     await waitFor(() => {
       expect(screen.getByText(/Privacidade e Cookies/i)).toBeInTheDocument();
-    });
+    }, { timeout: 2000 });
   });
 
-  it('should not show the cookie banner if consent was already given', () => {
+  it('should not show the cookie banner if consent was already given', async () => {
     localStorage.setItem('marcosdev_cookie_consent', 'accepted');
     render(<App />);
-    vi.advanceTimersByTime(1000);
-    expect(screen.queryByText(/Privacidade e Cookies/i)).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByText(/Privacidade e Cookies/i)).not.toBeInTheDocument();
+    });
   });
 
   it('should hide banner and set localStorage when "Sim, eu aceito" is clicked', async () => {
     render(<App />);
-    vi.advanceTimersByTime(1000);
-    const acceptButton = await screen.findByRole('button', { name: /Sim, eu aceito/i });
+    const acceptButton = await screen.findByRole('button', { name: /Sim, eu aceito/i }, { timeout: 3000 });
     await userEvent.click(acceptButton);
     expect(localStorage.getItem('marcosdev_cookie_consent')).toBe('accepted');
     expect(screen.queryByText(/Privacidade e Cookies/i)).not.toBeInTheDocument();
@@ -106,8 +119,7 @@ describe('CookieBanner', () => {
 
   it('should hide banner and set localStorage when "Recusar" is clicked', async () => {
     render(<App />);
-    vi.advanceTimersByTime(1000);
-    const declineButton = await screen.findByRole('button', { name: /Recusar/i });
+    const declineButton = await screen.findByRole('button', { name: /Recusar/i }, { timeout: 3000 });
     await userEvent.click(declineButton);
     expect(localStorage.getItem('marcosdev_cookie_consent')).toBe('declined');
     expect(screen.queryByText(/Privacidade e Cookies/i)).not.toBeInTheDocument();

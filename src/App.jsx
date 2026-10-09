@@ -142,6 +142,9 @@ const Header = () => {
           </nav>
 
           <button 
+            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             className="md:hidden text-slate-600 dark:text-stone-300 hover:text-slate-900 dark:hover:text-white transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -151,7 +154,7 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-slate-50 dark:bg-stone-900 border-b border-slate-200 dark:border-stone-800 transition-colors">
+        <div id="mobile-navigation" className="md:hidden bg-slate-50 dark:bg-stone-900 border-b border-slate-200 dark:border-stone-800 transition-colors">
           <div className="px-4 pt-2 pb-4 space-y-1">
             <a href="#sobre" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-slate-600 dark:text-stone-300 hover:bg-slate-200 dark:hover:bg-stone-800 hover:text-orange-600 dark:hover:text-orange-400 rounded-md transition-colors">Sobre Mim</a>
             <a href="#skills" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-slate-600 dark:text-stone-300 hover:bg-slate-200 dark:hover:bg-stone-800 hover:text-orange-600 dark:hover:text-orange-400 rounded-md transition-colors">Skills</a>
@@ -181,6 +184,14 @@ const Hero = () => {
             Desenvolvedor Backend Java & Solucionador de Problemas Complexos. 
             Construo arquiteturas escaláveis para que você não tenha que se preocupar com os servidores caindo na sexta-feira.
           </p>
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2 text-sm font-medium text-slate-600 dark:text-stone-300">
+            {['Java 11+', 'Spring Boot', 'Cloud Native', 'Sistemas Financeiros'].map((tag) => (
+              <span key={tag} className="px-3 py-1.5 rounded-full border border-slate-200 dark:border-stone-700 bg-white/70 dark:bg-stone-900/60 backdrop-blur-sm shadow-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
           
           <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
             <a href="#contato" className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white dark:text-stone-950 font-bold rounded-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-orange-500/25">
@@ -189,6 +200,15 @@ const Hero = () => {
             <a href="https://github.com/marcosadiazfarias-hub" target="_blank" rel="noreferrer" className="px-6 py-3 bg-white dark:bg-stone-800 hover:bg-slate-50 dark:hover:bg-stone-700 text-slate-900 dark:text-white font-medium rounded-lg transition-all flex items-center gap-2 border border-slate-200 dark:border-stone-700 shadow-sm">
               <GithubIcon size={20} />
               Meu GitHub
+            </a>
+            <a href="https://drive.google.com/file/d/1lvsVdEru8_o8HtmzMhnvfw5-8ZVH3Lbz/view?usp=sharing" target="_blank" rel="noreferrer" className="px-6 py-3 bg-white dark:bg-stone-800 hover:bg-slate-50 dark:hover:bg-stone-700 text-slate-900 dark:text-white font-medium rounded-lg transition-all flex items-center gap-2 border border-slate-200 dark:border-stone-700 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M9 13h6"/>
+                <path d="M9 17h6"/>
+              </svg>
+              Meu Currículo
             </a>
           </div>
         </div>
@@ -450,10 +470,10 @@ const Footer = () => {
               </a>
               
               <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
-                <a href="https://www.linkedin.com/in/marcosdiazfarias/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all">
+                <a href="https://www.linkedin.com/in/marcosdiazfarias/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all">
                   <LinkedinIcon size={22} />
                 </a>
-                <a href="https://github.com/marcosadiazfarias-hub" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#333] hover:text-white hover:border-[#333] transition-all">
+                <a href="https://github.com/marcosadiazfarias-hub" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" className="w-12 h-12 rounded-full bg-slate-800 dark:bg-stone-900 border border-slate-700 dark:border-stone-800 flex items-center justify-center text-slate-300 dark:text-stone-300 hover:bg-[#333] hover:text-white hover:border-[#333] transition-all">
                   <GithubIcon size={22} />
                 </a>
               </div>
