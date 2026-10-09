@@ -25,8 +25,28 @@ describe('App portfolio', () => {
     );
     expect(screen.getByRole('link', { name: /m\.diazfarias@gmail\.com/i })).toHaveAttribute('href', 'mailto:m.diazfarias@gmail.com');
     expect(screen.getByRole('link', { name: /\(48\) 98862-1897/i })).toHaveAttribute('href', 'tel:+5548988621897');
+    expect(screen.getByRole('link', { name: /Fale comigo sobre negócios no WhatsApp/i })).toHaveAttribute(
+      'href',
+      'https://wa.me/5548988621897?text=Ol%C3%A1%2C%20Marcos!%20Gostaria%20de%20conversar%20sobre%20neg%C3%B3cios.'
+    );
     expect(screen.getByRole('link', { name: /linkedin/i })).toHaveAttribute('href', 'https://www.linkedin.com/in/marcosdiazfarias/');
     expect(screen.getAllByRole('link', { name: /github/i })[1]).toHaveAttribute('href', 'https://github.com/marcosadiazfarias-hub');
+  });
+
+  it('should open a WhatsApp conversation for business inquiries', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const whatsappLink = screen.getByRole('link', { name: /Fale comigo sobre negócios no WhatsApp/i });
+    const whatsappUrl = new URL(whatsappLink.href);
+
+    expect(whatsappUrl.origin + whatsappUrl.pathname).toBe('https://wa.me/5548988621897');
+    expect(whatsappUrl.searchParams.get('text')).toBe('Olá, Marcos! Gostaria de conversar sobre negócios.');
+    expect(whatsappLink).toHaveAttribute('target', '_blank');
+    expect(whatsappLink).toHaveAttribute('rel', 'noreferrer');
+
+    await user.click(whatsappLink);
+    expect(whatsappLink).toBeInTheDocument();
   });
 
   it('should toggle the mobile menu when clicking the menu button', async () => {

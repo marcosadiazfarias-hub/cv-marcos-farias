@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Mail, 
   Phone, 
+  MessageCircle,
   Code2, 
   Server, 
   Database, 
@@ -467,6 +468,18 @@ const Footer = () => {
                   <Phone size={18} />
                 </div>
                 <span className="text-lg">(48) 98862-1897</span>
+              </a>
+
+              <a
+                href="https://wa.me/5548988621897?text=Ol%C3%A1%2C%20Marcos!%20Gostaria%20de%20conversar%20sobre%20neg%C3%B3cios."
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center lg:justify-start gap-4 text-slate-300 dark:text-stone-300 hover:text-white transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-slate-800 dark:bg-stone-900 flex items-center justify-center group-hover:bg-green-600 transition-colors border border-slate-700 dark:border-stone-800">
+                  <MessageCircle size={18} />
+                </div>
+                <span className="text-lg">Fale comigo sobre negócios no WhatsApp</span>
               </a>
               
               <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
