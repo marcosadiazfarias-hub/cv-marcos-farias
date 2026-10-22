@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MessageCircle,
-  Code2, 
-  Server, 
-  Database, 
-  Cloud, 
-  Terminal,
-  ChevronRight,
-  Quote,
-  Menu,
-  X,
-  GraduationCap,
-  BookOpen,
-  Cookie
+import React, {useEffect, useState} from 'react';
+import {
+    BookOpen,
+    ChevronRight,
+    Cloud,
+    Code2,
+    Cookie,
+    Database,
+    GraduationCap,
+    Mail,
+    Menu,
+    MessageCircle,
+    Quote,
+    Server,
+    Terminal,
+    X
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 24, className = "" }) => (
@@ -461,13 +460,6 @@ const Footer = () => {
                   <Mail size={18} />
                 </div>
                 <span className="text-lg">m.diazfarias@gmail.com</span>
-              </a>
-              
-              <a href="tel:+5548988621897" className="flex items-center justify-center lg:justify-start gap-4 text-slate-300 dark:text-stone-300 hover:text-white transition-colors group">
-                <div className="w-10 h-10 rounded-full bg-slate-800 dark:bg-stone-900 flex items-center justify-center group-hover:bg-sky-600 transition-colors border border-slate-700 dark:border-stone-800">
-                  <Phone size={18} />
-                </div>
-                <span className="text-lg">(48) 98862-1897</span>
               </a>
 
               <a

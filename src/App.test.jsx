@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import {render, screen, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/vitest';
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import {beforeEach, describe, expect, it} from 'vitest';
 import App from './App';
 
 describe('App portfolio', () => {
@@ -24,7 +24,7 @@ describe('App portfolio', () => {
       'https://drive.google.com/file/d/1lvsVdEru8_o8HtmzMhnvfw5-8ZVH3Lbz/view?usp=sharing'
     );
     expect(screen.getByRole('link', { name: /m\.diazfarias@gmail\.com/i })).toHaveAttribute('href', 'mailto:m.diazfarias@gmail.com');
-    expect(screen.getByRole('link', { name: /\(48\) 98862-1897/i })).toHaveAttribute('href', 'tel:+5548988621897');
+      expect(screen.queryByRole('link', {name: /\(48\) 98862-1897/i})).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Fale comigo sobre negócios no WhatsApp/i })).toHaveAttribute(
       'href',
       'https://wa.me/5548988621897?text=Ol%C3%A1%2C%20Marcos!%20Gostaria%20de%20conversar%20sobre%20neg%C3%B3cios.'

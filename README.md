@@ -169,6 +169,5 @@ O comando de deploy não compila o projeto automaticamente: execute `npm run bui
 ## Contato
 
 - E-mail: [m.diazfarias@gmail.com](mailto:m.diazfarias@gmail.com)
-- Telefone: [(48) 98862-1897](tel:+5548988621897)
 - LinkedIn: <https://www.linkedin.com/in/marcosdiazfarias/>
 - GitHub: <https://github.com/marcosadiazfarias-hub>
