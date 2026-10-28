@@ -109,8 +109,8 @@ O texto do perfil, o botão do currículo e os links de contato também estão e
 Os arquivos usados pelo site ficam em `public/`, incluindo:
 
 - `1780665451143.png`: identidade visual e imagem ilustrada.
-- `20260625_102255-IMG_STYLE.jpg`: foto da seção Sobre.
-- `20260625_215054-IMG_STYLE.jpg`: foto profissional no rodapé.
+- `imagem_preto_e_branco.jpg`: foto da seção Sobre.
+- `imagem_rodape.jpg`: foto profissional no rodapé.
 - `favicon.svg`: ícone da página.
 
 Referencie arquivos dessa pasta por caminho iniciado em `/`, por exemplo `/favicon.svg`. O currículo é aberto pelo link compartilhado do Google Drive configurado no botão do Hero; confirme que o arquivo permanece acessível para quem tem o link.

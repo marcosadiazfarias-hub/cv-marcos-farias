@@ -285,7 +285,7 @@ const About = () => {
             
             <div className="mb-4">
               <img 
-                src="20260625_102255-IMG_STYLE.jpg" 
+                src="imagem_preto_e_branco.jpg" 
                 alt="Marcos Farias PB" 
                 className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-2xl grayscale float-left mr-6 mb-4 border-2 border-slate-200 dark:border-stone-700 shadow-lg"
               />
@@ -489,7 +489,7 @@ const Footer = () => {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-sky-600 rounded-lg blur opacity-25"></div>
               <img 
-                src="20260625_215054-IMG_STYLE.jpg" 
+                src="imagem_rodape.jpg" 
                 alt="Marcos André Díaz Farias - Perfil Profissional" 
                 className="relative rounded-lg shadow-2xl object-cover border border-slate-800 dark:border-stone-800 w-full aspect-[3/4] md:aspect-square lg:aspect-[4/5] object-top"
               />
