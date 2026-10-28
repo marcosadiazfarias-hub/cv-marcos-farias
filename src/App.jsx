@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { initAnalytics } from './firebase';
 import {
     BookOpen,
     ChevronRight,
@@ -512,23 +513,12 @@ const Footer = () => {
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
 
-  // ID de Métrica do Google Analytics
-  const GA_TRACKING_ID = 'G-YXPNLHP9PF'; 
-
   const initializeAnalytics = () => {
-    if (window.gtag) return; // Evita carregar duas vezes
-    
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_TRACKING_ID);
+    initAnalytics();
   };
+
+
+  
 
   useEffect(() => {
     const consent = localStorage.getItem('marcosdev_cookie_consent');
