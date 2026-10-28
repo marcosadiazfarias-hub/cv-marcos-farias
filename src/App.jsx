@@ -7,6 +7,7 @@ import {
     Cookie,
     Database,
     GraduationCap,
+    Layout,
     Mail,
     Menu,
     MessageCircle,
@@ -32,6 +33,7 @@ const LinkedinIcon = ({ size = 24, className = "" }) => (
 
 const SKILLS = [
   { category: "Backend & Core", icon: <Terminal className="w-6 h-6 text-orange-500" />, items: ["Java 11+", "Spring Boot", "Spring MVC", "Quarkus"] },
+  { category: "Frontend & Web", icon: <Layout className="w-6 h-6 text-cyan-400" />, items: ["React 19", "Tailwind CSS 4", "Vite", "JavaScript (ES6+) / TypeScript", "Vitest & Testing Library"] },
   { category: "Arquitetura", icon: <Code2 className="w-6 h-6 text-sky-400" />, items: ["Microsserviços", "Arquitetura Hexagonal", "DDD", "Clean Code", "TDD"] },
   { category: "Integração & Mensageria", icon: <Server className="w-6 h-6 text-amber-500" />, items: ["Apache Kafka", "Apache Camel", "Digibee", "Camunda BPM"] },
   { category: "Cloud & DevOps", icon: <Cloud className="w-6 h-6 text-red-400" />, items: ["AWS", "Microsoft Azure", "Docker", "CI/CD", "Grafana", "Splunk"] },

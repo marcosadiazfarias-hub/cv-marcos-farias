@@ -15,6 +15,8 @@ describe('App portfolio', () => {
     expect(screen.getByRole('heading', { name: /Olá, sou o Marcos Farias/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Sobre o Desenvolvedor/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Arsenal Técnico/i })).toBeInTheDocument();
+    expect(screen.getByText('Frontend & Web')).toBeInTheDocument();
+    expect(screen.getByText('React 19')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Minha Trajetória/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Formação Acadêmica/i })).toBeInTheDocument();
 

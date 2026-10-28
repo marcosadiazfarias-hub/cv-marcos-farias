@@ -666,7 +666,10 @@
 <a name='L601'></a><a href='#L601'>601</a>
 <a name='L602'></a><a href='#L602'>602</a>
 <a name='L603'></a><a href='#L603'>603</a>
-<a name='L604'></a><a href='#L604'>604</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -699,6 +702,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1004,14 +1008,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">230x</span>
+<span class="cline-any cline-yes">280x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1269,22 +1273,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect } from 'react';
-import { 
-  Mail, 
-  MessageCircle,
-  Code2, 
-  Server, 
-  Database, 
-  Cloud, 
-  Terminal,
-  ChevronRight,
-  Quote,
-  Menu,
-  X,
-  GraduationCap,
-  BookOpen,
-  Cookie
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, {useEffect, useState} from 'react';
+import {
+    BookOpen,
+    ChevronRight,
+    Cloud,
+    Code2,
+    Cookie,
+    Database,
+    GraduationCap,
+    Layout,
+    Mail,
+    Menu,
+    MessageCircle,
+    Quote,
+    Server,
+    Terminal,
+    X
 } from 'lucide-react';
 &nbsp;
 const GithubIcon = ({ size = 24, className = "" }) =&gt; (
@@ -1303,6 +1308,7 @@ const LinkedinIcon = ({ size = 24, className = "" }) =&gt; (
 &nbsp;
 const SKILLS = [
   { category: "Backend &amp; Core", icon: &lt;Terminal className="w-6 h-6 text-orange-500" /&gt;, items: ["Java 11+", "Spring Boot", "Spring MVC", "Quarkus"] },
+  { category: "Frontend &amp; Web", icon: &lt;Layout className="w-6 h-6 text-cyan-400" /&gt;, items: ["React 19", "Tailwind CSS 4", "Vite", "JavaScript (ES6+) / TypeScript", "Vitest &amp; Testing Library"] },
   { category: "Arquitetura", icon: &lt;Code2 className="w-6 h-6 text-sky-400" /&gt;, items: ["Microsserviços", "Arquitetura Hexagonal", "DDD", "Clean Code", "TDD"] },
   { category: "Integração &amp; Mensageria", icon: &lt;Server className="w-6 h-6 text-amber-500" /&gt;, items: ["Apache Kafka", "Apache Camel", "Digibee", "Camunda BPM"] },
   { category: "Cloud &amp; DevOps", icon: &lt;Cloud className="w-6 h-6 text-red-400" /&gt;, items: ["AWS", "Microsoft Azure", "Docker", "CI/CD", "Grafana", "Splunk"] },
@@ -1511,8 +1517,7 @@ const About = () =&gt; {
     const loadQuotes = () =&gt; {
       try {
         const date = new Date();
-        const period = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getHours() &lt; 12 ? 'AM' : <span
-            class="branch-1 cbranch-no" title="branch not covered">'PM'}`;</span>
+        const period = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getHours() &lt; 12 ? 'AM' : <span class="branch-1 cbranch-no" title="branch not covered" >'PM'}`;</span>
         
         const cachedPeriod = localStorage.getItem('marcosdev_quotes_period');
         const cachedQuotes = localStorage.getItem('marcosdev_quotes_data');
@@ -1525,7 +1530,7 @@ const About = () =&gt; {
         const randomIndex1 = Math.floor(Math.random() * QUOTES_DATABASE.length);
         let randomIndex2 = Math.floor(Math.random() * QUOTES_DATABASE.length);
         while (randomIndex1 === randomIndex2) {
-<span class="cstat-no" title="statement not covered">          randomIndex2 = Math.floor(Math.random() * QUOTES_DATABASE.length);</span>
+<span class="cstat-no" title="statement not covered" >          randomIndex2 = Math.floor(Math.random() * QUOTES_DATABASE.length);</span>
         }
 &nbsp;
         const selectedQuotes = [
@@ -1557,7 +1562,7 @@ const About = () =&gt; {
             
             &lt;div className="mb-4"&gt;
               &lt;img 
-                src="20260625_102255-IMG_STYLE.jpg" 
+                src="imagem_preto_e_branco.jpg" 
                 alt="Marcos Farias PB" 
                 className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-2xl grayscale float-left mr-6 mb-4 border-2 border-slate-200 dark:border-stone-700 shadow-lg"
               /&gt;
@@ -1761,7 +1766,7 @@ const Footer = () =&gt; {
             &lt;div className="relative"&gt;
               &lt;div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-sky-600 rounded-lg blur opacity-25"&gt;&lt;/div&gt;
               &lt;img 
-                src="20260625_215054-IMG_STYLE.jpg" 
+                src="imagem_rodape.jpg" 
                 alt="Marcos André Díaz Farias - Perfil Profissional" 
                 className="relative rounded-lg shadow-2xl object-cover border border-slate-800 dark:border-stone-800 w-full aspect-[3/4] md:aspect-square lg:aspect-[4/5] object-top"
               /&gt;
@@ -1880,7 +1885,7 @@ export default function App() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-19T07:49:20.673Z
+                at 2026-10-28T13:09:20.900Z
             </div>
         <script src="prettify.js"></script>
         <script>
